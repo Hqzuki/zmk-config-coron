@@ -21,12 +21,12 @@
 
     desktop_left {
         pattern = <GESTURE_LEFT>;
-        bindings = <&kp LC(LG(LEFT_ARROW))>;
+        bindings = <&kp LC(LG(RIGHT_ARROW))>;
     };
 
     desktop_right {
         pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LC(LG(RIGHT_ARROW))>;
+        bindings = <&kp LC(LG(LEFT_ARROW))>;
     };
 
     desktop_overview_up {
