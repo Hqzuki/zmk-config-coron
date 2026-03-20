@@ -43,6 +43,7 @@
 / {
     zip_mouse_gesture_mac: zip_mouse_gesture_mac {
         compatible = "zmk,input-processor";
+        #input-processor-cells = <0>;
 
         stroke-size = <100>;
         movement-threshold = <6>;
