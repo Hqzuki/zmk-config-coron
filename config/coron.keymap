@@ -50,19 +50,25 @@
         layers = <3>;
         input-processors = <
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT
-            &zip_x_scaler 1 6
-            &zip_y_scaler 1 2
+            &zip_x_scaler 1 12
+            &zip_y_scaler 1 12
             &zip_xy_to_scroll_mapper
         >;
     };
 };
 
 / {
+    layer_listeners {
+        compatible = "zmk,layer-listeners";
+
+        desktop_gesture_auto_toggle {
+            layers = <4>;
+            bindings = <&mouse_gesture_on &mouse_gesture_off>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
-
-        /* Note: Key positions have shifted due to added columns.
-           You will need to recalculate these indices later. */
 
         tab {
             bindings = <&kp TAB>;
@@ -118,7 +124,7 @@
 &kp ESC         &kp Q         &kp W         &kp E  &kp R        &kp T  &kp Y      &kp U                 &kp I                  &kp O      &mt SEMICOLON SQT  &kp BACKSPACE
 &kp TAB         &kp A         &kp S         &kp D  &kp F        &kp G  &mo 6      &kp UP_ARROW          &kp H                  &kp J      &kp K              &kp L          &kp P            &kp ENTER
 &kp LEFT_SHIFT  &kp Z         &kp X         &kp C  &kp V        &kp B  &kp COLON  &kp DOWN_ARROW        &kp N                  &kp M      &kp COMMA          &kp DOT        &mt MINUS EQUAL  &kp RIGHT_SHIFT
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &mo 1  &lt 2 SPACE  &mo 3  &mouse_gesture  &mt LANG1 LEFT_ARROW  &mt LANG2 RIGHT_ARROW  &kp SLASH  &kp DEL
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &mo 1  &lt 2 SPACE  &mo 3  &mo 4      &mt LANG1 LEFT_ARROW  &mt LANG2 RIGHT_ARROW  &kp SLASH  &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
