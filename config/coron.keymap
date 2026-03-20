@@ -1,12 +1,12 @@
 /* coron.keymap */
 
+#include <dt-bindings/zmk/input_transform.h>
+#include <input/processors.dtsi>
+#include <mouse-gesture.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/input_transform.h>
-#include <input/processors.dtsi>
-#include <mouse-gesture.dtsi>
 
 &mt {
     flavor = "balanced";
@@ -145,7 +145,7 @@
             >;
         };
 
-        FUNCTION {
+        WIN {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &kp F1  &kp F2   &kp F3  &kp F4   &kp F5  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F13  &kp F6  &kp F7   &kp F8  &kp F9  &kp F10  &trans
