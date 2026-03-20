@@ -44,7 +44,6 @@
 
 &trackball_listener {
     status = "okay";
-    input-processors = <&zip_mouse_gesture>;
 
     pan_layer_scroll {
         layers = <3>;
@@ -54,6 +53,11 @@
             &zip_y_scaler 1 12
             &zip_xy_to_scroll_mapper
         >;
+    };
+
+    desktop_layer_gesture {
+        layers = <4>;
+        input-processors = <&zip_mouse_gesture>;
     };
 };
 
