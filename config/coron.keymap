@@ -18,7 +18,9 @@
 };
 
 &zip_mouse_gesture {
-    stroke-size = <300>;
+    stroke-size = <180>;
+    movement-threshold = <6>;
+    gesture-cooldown-ms = <250>;
     enable-eager-mode;
 
     desktop_left {
