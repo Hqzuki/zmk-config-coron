@@ -19,7 +19,7 @@ manifest:
 
     - name: zmk-mouse-gesture
       remote: kot149
-      revision: main
+      revision: v1
 
   self:
     path: config
