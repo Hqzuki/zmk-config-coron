@@ -2,12 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+
     - name: keebJP
       url-base: https://github.com/keebJP
-    - name: kot149
-      url-base: https://github.com/kot149
+
     - name: ssbb
       url-base: https://github.com/ssbb
+
+    - name: Hqzuki
+      url-base: https://github.com/Hqzuki
 
   projects:
     - name: zmk
@@ -20,7 +23,7 @@ manifest:
       revision: main
 
     - name: zmk-mouse-gesture
-      remote: kot149
+      remote: Hqzuki
       revision: v1
 
     - name: zmk-listeners
