@@ -73,10 +73,10 @@
 
         default_layer {
             bindings = <
-&kp ESC         &kp Q         &kp W         &kp E         &kp R                        &kp T        &kp Y                          &kp U                     &lt 5 I                &kp O      &kp SEMICOLON  &kp BACKSPACE
-&kp TAB         &kp A         &kp S         &kp D         &kp F                        &kp G        &kp LS(LG(S))                  &mt MINUS UP_ARROW        &kp H                  &kp J      &kp K          &kp L          &kp P    &kp ENTER
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C         &kp V                        &kp B        &kp COLON                      &mt SEMICOLON DOWN_ARROW  &kp N                  &kp M      &kp COMMA      &kp DOT        &kp SQT  &kp RIGHT_SHIFT
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN  &mt LANG1 LEFT_ARROW      &mt LANG2 RIGHT_ARROW  &kp SLASH  &kp DEL
+&kp ESC         &kp Q         &kp W         &kp E         &kp R                        &kp T        &kp Y                          &kp U                 &lt 5 I                &kp O      &kp SEMICOLON  &kp BACKSPACE
+&kp TAB         &kp A         &kp S         &kp D         &kp F                        &kp G        &kp LS(LG(S))                  &kp UP_ARROW          &kp H                  &kp J      &kp K          &kp L          &kp P    &kp ENTER
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C         &kp V                        &kp B        &kp COLON                      &kp DOWN_ARROW        &kp N                  &kp M      &kp COMMA      &kp DOT        &kp SQT  &kp RIGHT_SHIFT
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN  &mt LANG1 LEFT_ARROW  &mt LANG2 RIGHT_ARROW  &kp SLASH  &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
