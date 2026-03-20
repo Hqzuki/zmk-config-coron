@@ -22,26 +22,26 @@
 
     desktop_left {
         pattern = <GESTURE_LEFT>;
-        bindings-win = <&kp LC(LG(RIGHT_ARROW))>;
-        bindings-mac = <&kp LC(LEFT_ARROW)>;
+        win-bindings = <&kp LC(LG(RIGHT_ARROW))>;
+        mac-bindings = <&kp LC(LEFT_ARROW)>;
     };
 
     desktop_right {
         pattern = <GESTURE_RIGHT>;
-        bindings-win = <&kp LC(LG(LEFT_ARROW))>;
-        bindings-mac = <&kp LC(RIGHT_ARROW)>;
+        win-bindings = <&kp LC(LG(LEFT_ARROW))>;
+        mac-bindings = <&kp LC(RIGHT_ARROW)>;
     };
 
     desktop_overview_up {
         pattern = <GESTURE_UP>;
-        bindings-win = <&kp LG(TAB)>;
-        bindings-mac = <&kp LC(UP_ARROW)>;
+        win-bindings = <&kp LG(TAB)>;
+        mac-bindings = <&kp LC(UP_ARROW)>;
     };
 
     desktop_overview_down {
         pattern = <GESTURE_DOWN>;
-        bindings-win = <&kp LG(TAB)>;
-        bindings-mac = <&kp LC(DOWN_ARROW)>;
+        win-bindings = <&kp LG(TAB)>;
+        mac-bindings = <&kp LC(DOWN_ARROW)>;
     };
 };
 
