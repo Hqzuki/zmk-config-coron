@@ -18,7 +18,7 @@
 };
 
 &zip_mouse_gesture {
-    stroke-size = <180>;
+    stroke-size = <100>;
     movement-threshold = <6>;
     gesture-cooldown-ms = <250>;
     enable-eager-mode;
