@@ -13,10 +13,6 @@
     quick-tap-ms = <0>;
 };
 
-&trackball {
-    automouse-layer = <5>;
-};
-
 &zip_mouse_gesture {
     stroke-size = <100>;
     movement-threshold = <6>;
@@ -46,6 +42,7 @@
 
 &trackball_listener {
     status = "okay";
+    input-processors = <&zip_temp_layer 5 300>;
 
     pan_layer_scroll {
         layers = <3>;
