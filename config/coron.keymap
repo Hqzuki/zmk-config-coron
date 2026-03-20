@@ -40,6 +40,35 @@
     };
 };
 
+&zip_mouse_gesture_mac {
+    compatible = "zmk,input-processor";
+
+    stroke-size = <100>;
+    movement-threshold = <6>;
+    gesture-cooldown-ms = <250>;
+    enable-eager-mode;
+
+    desktop_left {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LC(LEFT_ARROW)>;
+    };
+
+    desktop_right {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LC(RIGHT_ARROW)>;
+    };
+
+    desktop_overview_up {
+        pattern = <GESTURE_UP>;
+        bindings = <&kp LC(UP_ARROW)>;
+    };
+
+    desktop_overview_down {
+        pattern = <GESTURE_DOWN>;
+        bindings = <&kp LC(UP_ARROW)>;
+    };
+};
+
 &trackball_listener {
     status = "okay";
     input-processors = <&zip_temp_layer 6 300>;
@@ -54,13 +83,21 @@
         >;
     };
 
-    desktop_layer_gesture {
-        layers = <5>;
-        input-processors = <
-            &zip_mouse_gesture
-            &zip_xy_scaler 0 1
-        >;
-    };
+   desktop_layer_gesture_win {
+    layers = <5>;   // WIN layer
+    input-processors = <
+        &zip_mouse_gesture
+        &zip_xy_scaler 0 1
+    >;
+};
+
+desktop_layer_gesture_mac {
+    layers = <1>;   // MAC layer
+    input-processors = <
+        &zip_mouse_gesture_mac
+        &zip_xy_scaler 0 1
+    >;
+};
 };
 
 / {
