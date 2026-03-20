@@ -14,6 +14,7 @@
 };
 
 &zip_mouse_gesture {
+    mac-layer = <1>;
     stroke-size = <100>;
     movement-threshold = <6>;
     gesture-cooldown-ms = <250>;
@@ -21,54 +22,26 @@
 
     desktop_left {
         pattern = <GESTURE_LEFT>;
-        bindings = <&kp LC(LG(RIGHT_ARROW))>;
+        bindings-win = <&kp LC(LG(RIGHT_ARROW))>;
+        bindings-mac = <&kp LC(LEFT_ARROW)>;
     };
 
     desktop_right {
         pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LC(LG(LEFT_ARROW))>;
+        bindings-win = <&kp LC(LG(LEFT_ARROW))>;
+        bindings-mac = <&kp LC(RIGHT_ARROW)>;
     };
 
     desktop_overview_up {
         pattern = <GESTURE_UP>;
-        bindings = <&kp LG(TAB)>;
+        bindings-win = <&kp LG(TAB)>;
+        bindings-mac = <&kp LC(UP_ARROW)>;
     };
 
     desktop_overview_down {
         pattern = <GESTURE_DOWN>;
-        bindings = <&kp LG(TAB)>;
-    };
-};
-
-/ {
-    zip_mouse_gesture_mac: zip_mouse_gesture_mac {
-        compatible = "zmk,input-processor";
-        #input-processor-cells = <0>;
-
-        stroke-size = <100>;
-        movement-threshold = <6>;
-        gesture-cooldown-ms = <250>;
-        enable-eager-mode;
-
-        desktop_left {
-            pattern = <GESTURE_LEFT>;
-            bindings = <&kp LC(LEFT_ARROW)>;
-        };
-
-        desktop_right {
-            pattern = <GESTURE_RIGHT>;
-            bindings = <&kp LC(RIGHT_ARROW)>;
-        };
-
-        desktop_overview_up {
-            pattern = <GESTURE_UP>;
-            bindings = <&kp LC(UP_ARROW)>;
-        };
-
-        desktop_overview_down {
-            pattern = <GESTURE_DOWN>;
-            bindings = <&kp LC(UP_ARROW)>;
-        };
+        bindings-win = <&kp LG(TAB)>;
+        bindings-mac = <&kp LC(DOWN_ARROW)>;
     };
 };
 
@@ -86,18 +59,10 @@
         >;
     };
 
-    desktop_layer_gesture_win {
+    desktop_layer_gesture {
         layers = <5>;
         input-processors = <
             &zip_mouse_gesture
-            &zip_xy_scaler 0 1
-        >;
-    };
-
-    desktop_layer_gesture_mac {
-        layers = <1>;
-        input-processors = <
-            &zip_mouse_gesture_mac
             &zip_xy_scaler 0 1
         >;
     };
