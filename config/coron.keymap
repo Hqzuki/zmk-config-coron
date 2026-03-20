@@ -11,25 +11,12 @@
     quick-tap-ms = <0>;
 };
 
-/*
- * これは残す。
- * トラックボールを動かした時に MOUSE layer(5) を一時的に有効化して、
- * そのレイヤー上の mouse button bindings を使えるようにする。
- */
 &trackball {
     automouse-layer = <5>;
 };
 
-/*
- * layer 3 (PAN) が有効な間だけ、
- * トラックボールの XY movement を scroll に変換する。
- *
- * 注意:
- * 実際の shield/board 定義によって listener 名が
- *   &trackball_listener
- * ではない場合があるので、その場合は実際の node 名に合わせて置き換えること。
- */
 &trackball_listener {
+    status = "okay";
     pan_layer_scroll {
         layers = <3>;
         input-processors = <&zip_xy_to_scroll_mapper>;
