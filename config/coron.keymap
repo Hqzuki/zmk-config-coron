@@ -103,13 +103,63 @@
     };
 
     macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
+    to_layer_0: to_layer_0 {
+        compatible = "zmk,behavior-macro-one-param";
+        #binding-cells = <1>;
+        bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+        label = "TO_LAYER_0";
     };
+
+    bt0_mac: bt0_mac {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &bt BT_SEL 0
+            &to 1
+        >;
+        label = "BT0_MAC";
+    };
+
+    bt1_win: bt1_win {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &bt BT_SEL 1
+            &to 0
+        >;
+        label = "BT1_WIN";
+    };
+
+    bt2_win: bt2_win {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &bt BT_SEL 2
+            &to 0
+        >;
+        label = "BT2_WIN";
+    };
+
+    bt3_win: bt3_win {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &bt BT_SEL 3
+            &to 0
+        >;
+        label = "BT3_WIN";
+    };
+
+    bt4_win: bt4_win {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &bt BT_SEL 4
+            &to 0
+        >;
+        label = "BT4_WIN";
+    };
+};
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
@@ -125,7 +175,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        WIN {
             bindings = <
 &kp ESC         &kp Q         &kp W         &kp E  &kp R        &kp T  &kp Y      &kp U                 &kp I                  &kp O      &mt SEMICOLON SQT  &kp BACKSPACE
 &kp TAB         &kp A         &kp S         &kp D  &kp F        &kp G  &mo 7      &kp UP_ARROW          &kp H                  &kp J      &kp K              &kp L          &kp P            &kp ENTER
@@ -145,7 +195,7 @@
             >;
         };
 
-        WIN {
+        FUNCTION {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &kp F1  &kp F2   &kp F3  &kp F4   &kp F5  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F13  &kp F6  &kp F7   &kp F8  &kp F9  &kp F10  &trans
@@ -192,11 +242,11 @@
 
         BLUETOOTH {
             bindings = <
-&trans  &trans  &trans  &trans        &trans        &trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans
-&trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans
-&trans  &trans  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans        &trans        &bootloader   &trans        &trans          &trans  &trans  &bt BT_CLR
-&trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans        &trans        &trans        &bt0_mac  &bt1_win  &bt2_win  &bt3_win  &bt4_win  &trans
+&trans  &trans  &trans  &trans        &trans        &trans        &trans    &trans    &trans    &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans    &trans    &bootloader   &trans    &trans    &trans  &trans  &bt BT_CLR
+&trans  &trans  &trans  &trans        &trans        &trans        &trans    &trans    &trans    &trans    &bt BT_CLR_ALL
             >;
-        };
+        };j
     };
 };
