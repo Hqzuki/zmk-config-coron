@@ -180,7 +180,7 @@
 &kp ESC &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &mt SEMICOLON SQT &kp BACKSPACE
 &kp TAB &kp A &kp S &kp D &kp F &kp G &mo 7 &kp UP_ARROW &kp H &kp J &kp K &kp L &kp P &kp ENTER
 &kp LEFT_SHIFT &kp Z &kp X &kp C &kp V &kp B &kp COLON &kp DOWN_ARROW &kp N &kp M &kp COMMA &kp DOT &mt EQUAL MINUS &kp SLASH
-&kp LCTRL &kp LEFT_GUI &kp LEFT_ALT &mo 1 &lt 3 SPACE &mo 4 &mo 5 &mt LANG1 LEFT_ARROW &mt LANG2 RIGHT_ARROW &kp SLASH &kp DEL
+&kp LEFT_GUI &kp LCTRL &kp LEFT_ALT &mo 1 &lt 3 SPACE &mo 4 &mo 5 &mt LANG1 LEFT_ARROW &mt LANG2 RIGHT_ARROW &kp SLASH &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
