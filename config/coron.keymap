@@ -82,6 +82,12 @@
 };
 
 / {
+    /* ★ 追加：BTプロファイル連動 layer */
+    default_layer {
+        compatible = "zmk,feature-default-layer";
+        layers = <1 0 0 0 0>; /* BT0=MAC, 他=WIN */
+    };
+
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
@@ -128,38 +134,39 @@
             label = "TO_LAYER_0";
         };
 
+        /* ★ 修正：layer切替削除 */
         bt0_mac: bt0_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0>, <&to 1>;
+            bindings = <&bt BT_SEL 0>;
             label = "BT0_MAC";
         };
 
         bt1_win: bt1_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1>, <&to 0>;
+            bindings = <&bt BT_SEL 1>;
             label = "BT1_WIN";
         };
 
         bt2_win: bt2_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2>, <&to 0>;
+            bindings = <&bt BT_SEL 2>;
             label = "BT2_WIN";
         };
 
         bt3_win: bt3_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3>, <&to 0>;
+            bindings = <&bt BT_SEL 3>;
             label = "BT3_WIN";
         };
 
         bt4_win: bt4_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 4>, <&to 0>;
+            bindings = <&bt BT_SEL 4>;
             label = "BT4_WIN";
         };
     };
@@ -217,32 +224,9 @@
             >;
         };
 
-        PAN_WIN {
-            bindings = <
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-            >;
-        };
-
-        PAN_MAC {
-            bindings = <
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-            >;
-        };
-
-        GESTURE {
-            bindings = <
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-            >;
-        };
+        PAN_WIN { bindings = < &trans >; };
+        PAN_MAC { bindings = < &trans >; };
+        GESTURE { bindings = < &trans >; };
 
         MOUSE {
             bindings = <
