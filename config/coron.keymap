@@ -47,9 +47,9 @@
 
 &trackball_listener {
     status = "okay";
-    input-processors = <&zip_temp_layer 6 300>;
+    input-processors = <&zip_temp_layer 7 300>;
 
-    pan_layer_scroll {
+    pan_win_scroll {
         layers = <4>;
         input-processors = <
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT
@@ -59,8 +59,19 @@
         >;
     };
 
-    desktop_layer_gesture {
+    pan_mac_scroll {
         layers = <5>;
+        input-processors = <
+            &zip_xy_transform INPUT_TRANSFORM_X_INVERT
+            &zip_xy_transform INPUT_TRANSFORM_Y_INVERT
+            &zip_x_scaler 1 12
+            &zip_y_scaler 1 12
+            &zip_xy_to_scroll_mapper
+        >;
+    };
+
+    desktop_layer_gesture {
+        layers = <6>;
         input-processors = <
             &zip_mouse_gesture
             &zip_xy_scaler 0 1
@@ -73,7 +84,7 @@
         compatible = "zmk,layer-listeners";
 
         desktop_gesture_auto_toggle {
-            layers = <5>;
+            layers = <6>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
     };
@@ -167,20 +178,20 @@
         WIN {
             bindings = <
 &kp ESC &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &mt SEMICOLON SQT &kp BACKSPACE
-&kp TAB &kp A &kp S &kp D &kp F &kp G &mo 7 &kp UP_ARROW &kp H &kp J &kp K &kp L &kp P &kp ENTER
+&kp TAB &kp A &kp S &kp D &kp F &kp G &mo 8 &kp UP_ARROW &kp H &kp J &kp K &kp L &kp P &kp ENTER
 &kp LEFT_SHIFT &kp Z &kp X &kp C &kp V &kp B &kp COLON &kp DOWN_ARROW &kp N &kp M &kp COMMA &kp DOT &mt EQUAL MINUS &kp SLASH
-&kp LCTRL &kp LEFT_WIN &kp LEFT_ALT &mo 1 &lt 3 SPACE &mo 4 &mo 5 &mt LANG1 LEFT_ARROW &mt LANG2 RIGHT_ARROW &kp SLASH &kp DEL
+&kp LCTRL &kp LEFT_WIN &kp LEFT_ALT &mo 1 &lt 3 SPACE &mo 4 &mo 6 &mt LANG1 LEFT_ARROW &mt LANG2 RIGHT_ARROW &kp SLASH &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-                MAC {
+        MAC {
             bindings = <
 &kp ESC &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &mt SEMICOLON SQT &kp BACKSPACE
-&kp TAB &kp A &kp S &kp D &kp F &kp G &mo 7 &kp UP_ARROW &kp H &kp J &kp K &kp L &kp P &kp ENTER
+&kp TAB &kp A &kp S &kp D &kp F &kp G &mo 8 &kp UP_ARROW &kp H &kp J &kp K &kp L &kp P &kp ENTER
 &kp LEFT_SHIFT &kp Z &kp X &kp C &kp V &kp B &kp COLON &kp DOWN_ARROW &kp N &kp M &kp COMMA &kp DOT &mt EQUAL MINUS &kp SLASH
-&kp LEFT_GUI &kp LCTRL &kp LEFT_ALT &mo 1 &lt 3 SPACE &mo 4 &mo 5 &mt LANG1 LEFT_ARROW &mt LANG2 RIGHT_ARROW &kp SLASH &kp DEL
+&kp LEFT_GUI &kp LCTRL &kp LEFT_ALT &mo 1 &lt 3 SPACE &mo 5 &mo 6 &mt LANG1 LEFT_ARROW &mt LANG2 RIGHT_ARROW &kp SLASH &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -204,7 +215,16 @@
             >;
         };
 
-        PAN {
+        PAN_WIN {
+            bindings = <
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+
+        PAN_MAC {
             bindings = <
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
