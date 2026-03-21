@@ -12,6 +12,9 @@ manifest:
     - name: Hqzuki
       url-base: https://github.com/Hqzuki
 
+    - name: cormoran
+      url-base: https://github.com/cormoran
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -29,6 +32,10 @@ manifest:
     - name: zmk-listeners
       remote: ssbb
       revision: v1
+
+    - name: zmk-feature-default-layer
+      remote: cormoran
+      revision: main
 
   self:
     path: config
