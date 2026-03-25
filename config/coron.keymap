@@ -187,7 +187,7 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &mo 2  &lt 3 SPACE  &mo 4  &mo 6          &mt LANG1 LEFT_ARROW  &mt LANG2 RIGHT_ARROW  &kp SLASH  &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
         MAC {
@@ -198,7 +198,7 @@
 &kp LEFT_GUI    &kp LCTRL  &kp LEFT_ALT  &mo 2  &lt 3 SPACE  &mo 5  &mo 6                 &mt LANG1 LEFT_ARROW  &mt LANG2 RIGHT_ARROW  &kp SLASH  &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
         FUNCTION {
