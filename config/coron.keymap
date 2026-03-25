@@ -82,16 +82,6 @@
     };
 };
 
-/ {
-    layer_listeners {
-        compatible = "zmk,layer-listeners";
-
-        desktop_gesture_auto_toggle {
-            layers = <6>;
-            bindings = <&mouse_gesture_on &mouse_gesture_off>;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
