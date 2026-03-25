@@ -15,6 +15,9 @@ manifest:
     - name: cormoran
       url-base: https://github.com/cormoran
 
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -36,6 +39,10 @@ manifest:
     - name: zmk-feature-default-layer
       remote: cormoran
       revision: main
+
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: v0.3
 
   self:
     path: config
