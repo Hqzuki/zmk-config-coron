@@ -122,7 +122,7 @@ RC(3,6) RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,9) RC(3,10)        
         compatible = "alps,ec11";
         a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <12>;
+        steps = <24>;
         status = "disabled";
     };
 
@@ -133,7 +133,7 @@ RC(3,6) RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,9) RC(3,10)        
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <5>;
+        triggers-per-rotation = <8>;
     };
 
     trackball_listener: trackball_listener {
