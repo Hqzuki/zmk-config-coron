@@ -80,6 +80,12 @@
             &zip_xy_scaler 0 1
         >;
     };
+
+    mac_cursor_speed {
+        layers = <1>;
+        input-processors = <&zip_xy_scaler 3 2>;
+        process-next;
+    };
 };
 
 / {
