@@ -127,6 +127,27 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        jk_scroll_win {
+            bindings = <&mo 4>;
+            key-positions = <21 22>;
+            layers = <0>;
+            slow-release;
+        };
+
+        jk_scroll_mac {
+            bindings = <&mo 5>;
+            key-positions = <21 22>;
+            layers = <1>;
+            slow-release;
+        };
+
+        kl_mission_control {
+            bindings = <&mo 6>;
+            key-positions = <22 23>;
+            layers = <0 1>;
+            slow-release;
+        };
     };
 
     macros {
@@ -190,7 +211,7 @@
         WIN {
             bindings = <
 &kp ESC         &kp Q         &kp W         &kp E  &kp R        &kp T      &kp Y           &kp U            &kp I      &kp O      &mt SEMICOLON SQT  &kp BACKSPACE
-&kp TAB         &kp A         &kp S         &kp D  &kp F        &kp G      &kp LG(LS(S))   &kp UP_ARROW     &kp H      &lt 4 J    &lt 6 K            &kp L          &kp P            &kp ENTER
+&kp TAB         &kp A         &kp S         &kp D  &kp F        &kp G      &kp LG(LS(S))   &kp UP_ARROW     &kp H      &kp J      &kp K              &kp L          &kp P            &kp ENTER
 &kp LEFT_SHIFT  &kp Z         &kp X         &kp C  &kp V        &kp B      &mo 8           &kp DOWN_ARROW   &kp N      &kp M      &kp COMMA          &kp DOT        &mt EQUAL MINUS  &kp SLASH
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &mo 2  &lt 3 SPACE  &kp LANG1  &kp LEFT_ARROW  &kp RIGHT_ARROW  &kp LANG2  &kp SLASH  &kp DEL
             >;
@@ -199,7 +220,7 @@
         MAC {
             bindings = <
 &kp ESC         &kp Q      &kp W         &kp E  &kp R        &kp T      &kp Y                     &kp U            &kp I      &kp O      &mt SEMICOLON SQT  &kp BACKSPACE
-&kp TAB         &kp A      &kp S         &kp D  &kp F        &kp G      &kp LC(LS(LG(NUMBER_4)))  &kp UP_ARROW     &kp H      &lt 5 J    &lt 6 K            &kp L          &kp P            &kp ENTER
+&kp TAB         &kp A      &kp S         &kp D  &kp F        &kp G      &kp LC(LS(LG(NUMBER_4)))  &kp UP_ARROW     &kp H      &kp J      &kp K              &kp L          &kp P            &kp ENTER
 &kp LEFT_SHIFT  &kp Z      &kp X         &kp C  &kp V        &kp B      &mo 8                     &kp DOWN_ARROW   &kp N      &kp M      &kp COMMA          &kp DOT        &mt EQUAL MINUS  &kp SLASH
 &kp LEFT_GUI    &kp LCTRL  &kp LEFT_ALT  &mo 2  &lt 3 SPACE  &kp LANG1  &kp LEFT_ARROW            &kp RIGHT_ARROW  &kp LANG2  &kp SLASH  &kp DEL
             >;
