@@ -23,13 +23,13 @@
 
     desktop_left {
         pattern = <GESTURE_LEFT>;
-        win-bindings = <&kp LC(LG(RIGHT_ARROW))>;
+        win-bindings = <&kp LC(LG(LEFT_ARROW))>;
         mac-bindings = <&kp LC(LEFT_ARROW)>;
     };
 
     desktop_right {
         pattern = <GESTURE_RIGHT>;
-        win-bindings = <&kp LC(LG(LEFT_ARROW))>;
+        win-bindings = <&kp LC(LG(RIGHT_ARROW))>;
         mac-bindings = <&kp LC(RIGHT_ARROW)>;
     };
 
