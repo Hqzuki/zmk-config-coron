@@ -1,3 +1,6 @@
+/* Devicetree is preprocessed before Kconfig; enable inertia on this half. */
+#define CORON_SCROLL_INERTIA 1
+
 #include "coron.dtsi"
 
 &default_transform {
