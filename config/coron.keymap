@@ -55,9 +55,11 @@
         input-processors = <
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT
             &zip_axis_lock
-            &zip_x_scaler 1 12
-            &zip_y_scaler 1 12
             &zip_xy_to_scroll_mapper
+#if defined(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+            &scroll_inertia_win
+#endif
+            &zip_scroll_scaler 1 12
         >;
     };
 
@@ -66,10 +68,12 @@
         input-processors = <
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT
             &zip_axis_lock
-            &zip_x_scaler 1 12
-            &zip_y_scaler 1 12
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+#if defined(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+            &scroll_inertia_mac
+#endif
+            &zip_scroll_scaler 1 12
         >;
     };
 
@@ -91,6 +95,43 @@
 };
 
 / {
+#if defined(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+    /* Inertia emits directly to HID: apply direction transforms before it,
+     * and keep scale/scale-div equal to the downstream scroll scaler.
+     * Only the right (central) half can emit mouse HID reports.
+     */
+    scroll_inertia_win: scroll_inertia_win {
+        compatible = "zmk,input-processor-scroll-inertia";
+        #input-processor-cells = <0>;
+        axis = <0>;
+        layer = <4>;
+        scale = <1>;
+        scale-div = <12>;
+        /* Initial thresholds for the 400 CPI, 125 Hz sensor. */
+        start = <16>;
+        move = <32>;
+        stop = <1>;
+        tick = <8>;
+        release = <24>;
+        span = <2000>;
+    };
+
+    scroll_inertia_mac: scroll_inertia_mac {
+        compatible = "zmk,input-processor-scroll-inertia";
+        #input-processor-cells = <0>;
+        axis = <0>;
+        layer = <5>;
+        scale = <1>;
+        scale-div = <12>;
+        start = <16>;
+        move = <32>;
+        stop = <1>;
+        tick = <8>;
+        release = <24>;
+        span = <2000>;
+    };
+#endif
+
     layer_listeners {
         compatible = "zmk,layer-listeners";
 

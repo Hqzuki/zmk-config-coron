@@ -18,6 +18,9 @@ manifest:
     - name: caksoylar
       url-base: https://github.com/caksoylar
 
+    - name: mjmjm0101
+      url-base: https://github.com/mjmjm0101
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -43,6 +46,10 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
+
+    - name: zmk-input-processor-scroll-inertia
+      remote: mjmjm0101
+      revision: main
 
   self:
     path: config
