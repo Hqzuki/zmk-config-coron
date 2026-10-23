@@ -106,7 +106,7 @@
         stop = <1>;
         tick = <8>;
         release = <24>;
-        span = <2000>;
+        span = <5000>;
     };
 
     scroll_inertia_mac: scroll_inertia_mac {
@@ -121,7 +121,7 @@
         stop = <1>;
         tick = <8>;
         release = <24>;
-        span = <2000>;
+        span = <5000>;
     };
 #endif
 
