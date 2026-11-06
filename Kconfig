@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: MIT
+config ZMK_DEFAULT_LAYER
+    bool "Per-endpoint WIN/MAC base layer"
+config ZMK_DEFAULT_LAYER_MIN_INDEX
+    int
+    default 0
+config ZMK_DEFAULT_LAYER_MAX_INDEX
+    int
+    default 1
