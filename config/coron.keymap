@@ -221,9 +221,7 @@
     };
 
     behaviors {
-        /* Consumes rotation without output; an omitted binding would fall
-         * through to the WIN/MAC base layer.
-         */
+
 
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";

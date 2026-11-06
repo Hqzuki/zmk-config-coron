@@ -2,8 +2,8 @@
 config ZMK_DEFAULT_LAYER
     bool "Per-endpoint WIN/MAC base layer"
 config ZMK_DEFAULT_LAYER_MIN_INDEX
-    int
+    int "First saved base layer index"
     default 0
 config ZMK_DEFAULT_LAYER_MAX_INDEX
-    int
+    int "Last saved base layer index"
     default 1
