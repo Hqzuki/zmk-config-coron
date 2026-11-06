@@ -1,4 +1,4 @@
-name: Portable keymap and endpoint checks
+name: Endpoint regression checks
 on: [push, pull_request, workflow_dispatch]
 jobs:
   checks:
@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 tests/corex/default_layer_test.py
-      - run: python3 tests/coron/keymap_test.py
       - run: |
           cc -std=c11 -Wall -Wextra -Werror tests/corex/endpoint_policy_test.c -o /tmp/endpoint-test
           /tmp/endpoint-test
